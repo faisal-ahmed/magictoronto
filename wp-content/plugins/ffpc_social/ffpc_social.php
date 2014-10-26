@@ -12,28 +12,6 @@ Author URI: http://google.com/
  * Get live tweets from an account, depending on the parameter
  * Returns an stdClass object's array
  */
-function ffpc_get_last_tweet() {
-			
-	$count = 1;
-	$defaultName = get_option( 'ffpc_social_twitter_acc' );
-	if($defaultName)
-		$screen_name = $defaultName;
-			
-	if($screen_name == "") $screen_name = "RockStar Techie Solutions";
-	try {
-		$feed_url = 'http://twitter.com/statuses/user_timeline.rss?screen_name='.$screen_name.'&count='.$count;					
-		$content = @file_get_contents($feed_url);
-		$x = new SimpleXmlElement($content);   
-		
-		echo '<a href="'.$x->channel->item->link.'" class="link_tweet floatleft">'.
-                $x->channel->item->title.
-              '</a>
-              <a href="http://twitter.com/'.$screen_name.'" class="link_follow floatright">Follow</a>';
-	
-	}catch (Exception $e){
-		echo $e->getMessage();
-	}
-}
 
 function ffpc_get_social_links() {
 ?>
@@ -51,25 +29,6 @@ function ffpc_get_social_links() {
 <?php
 }
 
-//Register FB Widget
-function csn_facebook_widget() {
-?>
-
-	<div class="connect_with_us">
-        <div class="clear"></div>
-		<div class="connect_title">
-			<a href="<?php echo get_option( 'ffpc_social_facebook_url' ); ?>" target="_blank" class="link_facebook floatright">Facebook</a>
-			<div class="clear"></div>
-		</div>
-										
-		<div class="connect_box">
-            <iframe src="//www.facebook.com/plugins/likebox.php?href=<?php echo get_option( 'ffpc_social_facebook_url' ); ?>%2F186739231679&amp;width=212&amp;height=590&amp;colorscheme=light&amp;show_faces=true&amp;border_color&amp;stream=true&amp;header=true&amp;appId=277087095642440" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:212px; height:590px;" allowTransparency="true"></iframe>
-		</div>
-	</div>
-<?php
-}
-
-register_sidebar_widget("CSN_Facebook_Widget", "csn_facebook_widget");
 /********** Admin Panel **************************/
 add_action('admin_menu', 'ffpc_plugin_menu');
 
@@ -165,7 +124,6 @@ function ffpcSocial_options() {
 		</table>
 	<hr />
 </form>
-</div>
 
 <?php	
 }

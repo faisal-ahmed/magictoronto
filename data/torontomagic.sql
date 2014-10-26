@@ -117,8 +117,8 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
 --
 
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(1, 'siteurl', 'http://localhost/Faisal/magictoronto', 'yes'),
-(2, 'home', 'http://localhost/Faisal/magictoronto', 'yes'),
+(1, 'siteurl', 'http://localhost/magictoronto', 'yes'),
+(2, 'home', 'http://localhost/magictoronto', 'yes'),
 (3, 'blogname', 'Magic In Toronto', 'yes'),
 (4, 'blogdescription', 'Why Join Learn', 'yes'),
 (5, 'users_can_register', '0', 'yes'),
@@ -289,7 +289,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (24, 6, '_menu_item_target', ''),
 (25, 6, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
 (26, 6, '_menu_item_xfn', ''),
-(27, 6, '_menu_item_url', 'http://localhost/Faisal/magictoronto/'),
+(27, 6, '_menu_item_url', 'http://localhost/magictoronto/'),
 (29, 7, '_menu_item_type', 'post_type'),
 (30, 7, '_menu_item_menu_item_parent', '6'),
 (31, 7, '_menu_item_object_id', '2'),
@@ -313,7 +313,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (51, 10, '_menu_item_target', ''),
 (52, 10, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
 (53, 10, '_menu_item_xfn', ''),
-(54, 10, '_menu_item_url', 'http://localhost/Faisal/magictoronto/'),
+(54, 10, '_menu_item_url', 'http://localhost/magictoronto/'),
 (56, 11, '_menu_item_type', 'post_type'),
 (57, 11, '_menu_item_menu_item_parent', '0'),
 (58, 11, '_menu_item_object_id', '2'),
@@ -329,7 +329,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (69, 12, '_menu_item_target', ''),
 (70, 12, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
 (71, 12, '_menu_item_xfn', ''),
-(72, 12, '_menu_item_url', 'http://localhost/Faisal/magictoronto/'),
+(72, 12, '_menu_item_url', 'http://localhost/magictoronto/'),
 (74, 13, '_menu_item_type', 'post_type'),
 (75, 13, '_menu_item_menu_item_parent', '0'),
 (76, 13, '_menu_item_object_id', '2'),
@@ -345,7 +345,7 @@ INSERT INTO `wp_postmeta` (`meta_id`, `post_id`, `meta_key`, `meta_value`) VALUE
 (87, 14, '_menu_item_target', ''),
 (88, 14, '_menu_item_classes', 'a:1:{i:0;s:0:"";}'),
 (89, 14, '_menu_item_xfn', ''),
-(90, 14, '_menu_item_url', 'http://localhost/Faisal/magictoronto/'),
+(90, 14, '_menu_item_url', 'http://localhost/magictoronto/'),
 (92, 15, '_menu_item_type', 'post_type'),
 (93, 15, '_menu_item_menu_item_parent', '0'),
 (94, 15, '_menu_item_object_id', '2'),
@@ -400,21 +400,21 @@ CREATE TABLE IF NOT EXISTS `wp_posts` (
 --
 
 INSERT INTO `wp_posts` (`ID`, `post_author`, `post_date`, `post_date_gmt`, `post_content`, `post_title`, `post_excerpt`, `post_status`, `comment_status`, `ping_status`, `post_password`, `post_name`, `to_ping`, `pinged`, `post_modified`, `post_modified_gmt`, `post_content_filtered`, `post_parent`, `guid`, `menu_order`, `post_type`, `post_mime_type`, `comment_count`) VALUES
-(1, 1, '2014-10-24 13:59:10', '2014-10-24 13:59:10', 'Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!', 'Hello world!', '', 'publish', 'open', 'open', '', 'hello-world', '', '', '2014-10-24 13:59:10', '2014-10-24 13:59:10', '', 0, 'http://localhost/Faisal/magictoronto/?p=1', 0, 'post', '', 1),
-(2, 1, '2014-10-24 13:59:10', '2014-10-24 13:59:10', 'This is an example page. It''s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:\n\n<blockquote>Hi there! I''m a bike messenger by day, aspiring actor by night, and this is my blog. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin'' caught in the rain.)</blockquote>\n\n...or something like this:\n\n<blockquote>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</blockquote>\n\nAs a new WordPress user, you should go to <a href="http://localhost/Faisal/magictoronto/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!', 'Sample Page', '', 'publish', 'open', 'open', '', 'sample-page', '', '', '2014-10-24 13:59:10', '2014-10-24 13:59:10', '', 0, 'http://localhost/Faisal/magictoronto/?page_id=2', 0, 'page', '', 0),
-(3, 1, '2014-10-24 13:59:21', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2014-10-24 13:59:21', '0000-00-00 00:00:00', '', 0, 'http://localhost/Faisal/magictoronto/?p=3', 0, 'post', '', 0),
-(6, 1, '2014-10-24 16:21:01', '2014-10-24 16:21:01', '', 'Home', '', 'publish', 'open', 'open', '', 'home', '', '', '2014-10-24 20:51:31', '2014-10-24 20:51:31', '', 0, 'http://localhost/Faisal/magictoronto/?p=6', 1, 'nav_menu_item', '', 0),
-(7, 1, '2014-10-24 16:21:01', '2014-10-24 16:21:01', ' ', '', '', 'publish', 'open', 'open', '', '7', '', '', '2014-10-24 20:51:31', '2014-10-24 20:51:31', '', 0, 'http://localhost/Faisal/magictoronto/?p=7', 2, 'nav_menu_item', '', 0),
-(8, 1, '2014-10-24 16:26:17', '2014-10-24 16:26:17', ' ', '', '', 'publish', 'open', 'open', '', '8', '', '', '2014-10-24 20:51:31', '2014-10-24 20:51:31', '', 0, 'http://localhost/Faisal/magictoronto/?p=8', 3, 'nav_menu_item', '', 0),
-(9, 1, '2014-10-24 21:05:30', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2014-10-24 21:05:30', '0000-00-00 00:00:00', '', 0, 'http://localhost/Faisal/magictoronto/?page_id=9', 0, 'page', '', 0),
-(10, 1, '2014-10-24 21:06:35', '2014-10-24 21:06:35', '', 'Home', '', 'publish', 'open', 'open', '', 'home-2', '', '', '2014-10-24 21:06:44', '2014-10-24 21:06:44', '', 0, 'http://localhost/Faisal/magictoronto/?p=10', 1, 'nav_menu_item', '', 0),
-(11, 1, '2014-10-24 21:06:35', '2014-10-24 21:06:35', ' ', '', '', 'publish', 'open', 'open', '', '11', '', '', '2014-10-24 21:06:44', '2014-10-24 21:06:44', '', 0, 'http://localhost/Faisal/magictoronto/?p=11', 2, 'nav_menu_item', '', 0),
-(12, 1, '2014-10-24 21:07:04', '2014-10-24 21:07:04', '', 'Home', '', 'publish', 'open', 'open', '', 'home-3', '', '', '2014-10-24 21:07:04', '2014-10-24 21:07:04', '', 0, 'http://localhost/Faisal/magictoronto/?p=12', 1, 'nav_menu_item', '', 0),
-(13, 1, '2014-10-24 21:07:04', '2014-10-24 21:07:04', ' ', '', '', 'publish', 'open', 'open', '', '13', '', '', '2014-10-24 21:07:04', '2014-10-24 21:07:04', '', 0, 'http://localhost/Faisal/magictoronto/?p=13', 2, 'nav_menu_item', '', 0),
-(14, 1, '2014-10-24 21:07:28', '2014-10-24 21:07:28', '', 'Home', '', 'publish', 'open', 'open', '', 'home-4', '', '', '2014-10-24 21:13:22', '2014-10-24 21:13:22', '', 0, 'http://localhost/Faisal/magictoronto/?p=14', 1, 'nav_menu_item', '', 0),
-(15, 1, '2014-10-24 21:07:28', '2014-10-24 21:07:28', ' ', '', '', 'publish', 'open', 'open', '', '15', '', '', '2014-10-24 21:13:22', '2014-10-24 21:13:22', '', 0, 'http://localhost/Faisal/magictoronto/?p=15', 2, 'nav_menu_item', '', 0),
-(16, 1, '2014-10-24 22:09:29', '2014-10-24 22:09:29', '<strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Home', '', 'publish', 'closed', 'closed', '', 'home', '', '', '2014-10-24 22:16:45', '2014-10-24 22:16:45', '', 0, 'http://localhost/Faisal/magictoronto/?page_id=16', 0, 'page', '', 0),
-(17, 1, '2014-10-24 22:09:29', '2014-10-24 22:09:29', '<strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Home', '', 'inherit', 'open', 'open', '', '16-revision-v1', '', '', '2014-10-24 22:09:29', '2014-10-24 22:09:29', '', 16, 'http://localhost/Faisal/magictoronto/16-revision-v1/', 0, 'revision', '', 0);
+(1, 1, '2014-10-24 13:59:10', '2014-10-24 13:59:10', 'Welcome to WordPress. This is your first post. Edit or delete it, then start blogging!', 'Hello world!', '', 'publish', 'open', 'open', '', 'hello-world', '', '', '2014-10-24 13:59:10', '2014-10-24 13:59:10', '', 0, 'http://localhost/magictoronto/?p=1', 0, 'post', '', 1),
+(2, 1, '2014-10-24 13:59:10', '2014-10-24 13:59:10', 'This is an example page. It''s different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:\n\n<blockquote>Hi there! I''m a bike messenger by day, aspiring actor by night, and this is my blog. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin'' caught in the rain.)</blockquote>\n\n...or something like this:\n\n<blockquote>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</blockquote>\n\nAs a new WordPress user, you should go to <a href="http://localhost/magictoronto/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!', 'Sample Page', '', 'publish', 'open', 'open', '', 'sample-page', '', '', '2014-10-24 13:59:10', '2014-10-24 13:59:10', '', 0, 'http://localhost/magictoronto/?page_id=2', 0, 'page', '', 0),
+(3, 1, '2014-10-24 13:59:21', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2014-10-24 13:59:21', '0000-00-00 00:00:00', '', 0, 'http://localhost/magictoronto/?p=3', 0, 'post', '', 0),
+(6, 1, '2014-10-24 16:21:01', '2014-10-24 16:21:01', '', 'Home', '', 'publish', 'open', 'open', '', 'home', '', '', '2014-10-24 20:51:31', '2014-10-24 20:51:31', '', 0, 'http://localhost/magictoronto/?p=6', 1, 'nav_menu_item', '', 0),
+(7, 1, '2014-10-24 16:21:01', '2014-10-24 16:21:01', ' ', '', '', 'publish', 'open', 'open', '', '7', '', '', '2014-10-24 20:51:31', '2014-10-24 20:51:31', '', 0, 'http://localhost/magictoronto/?p=7', 2, 'nav_menu_item', '', 0),
+(8, 1, '2014-10-24 16:26:17', '2014-10-24 16:26:17', ' ', '', '', 'publish', 'open', 'open', '', '8', '', '', '2014-10-24 20:51:31', '2014-10-24 20:51:31', '', 0, 'http://localhost/magictoronto/?p=8', 3, 'nav_menu_item', '', 0),
+(9, 1, '2014-10-24 21:05:30', '0000-00-00 00:00:00', '', 'Auto Draft', '', 'auto-draft', 'open', 'open', '', '', '', '', '2014-10-24 21:05:30', '0000-00-00 00:00:00', '', 0, 'http://localhost/magictoronto/?page_id=9', 0, 'page', '', 0),
+(10, 1, '2014-10-24 21:06:35', '2014-10-24 21:06:35', '', 'Home', '', 'publish', 'open', 'open', '', 'home-2', '', '', '2014-10-24 21:06:44', '2014-10-24 21:06:44', '', 0, 'http://localhost/magictoronto/?p=10', 1, 'nav_menu_item', '', 0),
+(11, 1, '2014-10-24 21:06:35', '2014-10-24 21:06:35', ' ', '', '', 'publish', 'open', 'open', '', '11', '', '', '2014-10-24 21:06:44', '2014-10-24 21:06:44', '', 0, 'http://localhost/magictoronto/?p=11', 2, 'nav_menu_item', '', 0),
+(12, 1, '2014-10-24 21:07:04', '2014-10-24 21:07:04', '', 'Home', '', 'publish', 'open', 'open', '', 'home-3', '', '', '2014-10-24 21:07:04', '2014-10-24 21:07:04', '', 0, 'http://localhost/magictoronto/?p=12', 1, 'nav_menu_item', '', 0),
+(13, 1, '2014-10-24 21:07:04', '2014-10-24 21:07:04', ' ', '', '', 'publish', 'open', 'open', '', '13', '', '', '2014-10-24 21:07:04', '2014-10-24 21:07:04', '', 0, 'http://localhost/magictoronto/?p=13', 2, 'nav_menu_item', '', 0),
+(14, 1, '2014-10-24 21:07:28', '2014-10-24 21:07:28', '', 'Home', '', 'publish', 'open', 'open', '', 'home-4', '', '', '2014-10-24 21:13:22', '2014-10-24 21:13:22', '', 0, 'http://localhost/magictoronto/?p=14', 1, 'nav_menu_item', '', 0),
+(15, 1, '2014-10-24 21:07:28', '2014-10-24 21:07:28', ' ', '', '', 'publish', 'open', 'open', '', '15', '', '', '2014-10-24 21:13:22', '2014-10-24 21:13:22', '', 0, 'http://localhost/magictoronto/?p=15', 2, 'nav_menu_item', '', 0),
+(16, 1, '2014-10-24 22:09:29', '2014-10-24 22:09:29', '<strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Home', '', 'publish', 'closed', 'closed', '', 'home', '', '', '2014-10-24 22:16:45', '2014-10-24 22:16:45', '', 0, 'http://localhost/magictoronto/?page_id=16', 0, 'page', '', 0),
+(17, 1, '2014-10-24 22:09:29', '2014-10-24 22:09:29', '<strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.', 'Home', '', 'inherit', 'open', 'open', '', '16-revision-v1', '', '', '2014-10-24 22:09:29', '2014-10-24 22:09:29', '', 16, 'http://localhost/magictoronto/16-revision-v1/', 0, 'revision', '', 0);
 
 -- --------------------------------------------------------
 
