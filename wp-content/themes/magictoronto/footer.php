@@ -67,7 +67,7 @@
                 ?>
             </div><!-- End col-md-4 -->
             <div class="col-md-3 col-sm-3">
-                <?php ffpc_get_social_links(); ?>
+                <?php ffpc_get_social_links_with_additional_info(); ?>
             </div><!-- End col-md-4 -->
         </div><!-- End row -->
     </div>

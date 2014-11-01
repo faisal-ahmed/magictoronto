@@ -76,8 +76,8 @@ nav {
 
 }
 a#logo {
-	width:150px;
-	height:36px;
+	width:200px;
+	height:80px;
 	background:url(../img/logo.png) no-repeat 0 0;
 	text-indent:-9999px;
 	display:block;
@@ -283,7 +283,7 @@ footer {
 	background:#1c1c1c url(../img/logo_footer.png) no-repeat center 60px;
 	color:#fff;
 	width:100%;
-	padding-top:150px;
+	padding-top:170px;
 	text-align:center;
 	font-size:13px;
 }

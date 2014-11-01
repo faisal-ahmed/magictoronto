@@ -7,6 +7,10 @@
  */
 
 //upload.php
+if (!isset($_FILES["myfile"])) {
+    echo "Error: No file was found.";
+    exit;
+}
 $uploaddir = dirname(__FILE__).'/sliderImages/';
 $file_name = $_FILES["myfile"]["name"];
 $uploadfile = $uploaddir . $file_name;

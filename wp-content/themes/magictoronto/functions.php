@@ -524,3 +524,51 @@ function createSubMenu($parent, &$menulist){
     $ret .= '</ul>';
     return ($flag) ? $ret : "";
 }
+
+add_action( 'init', 'create_testimonials' );
+function create_testimonials() {
+    register_post_type( 'testimonials',
+        array(
+            'labels' => array(
+                'name' => __( 'Testimonials' ),
+                'singular_name' => __( 'Testimonial' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'testimonials'),
+            'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail' ),
+        )
+    );
+}
+
+add_action( 'init', 'create_clients' );
+function create_clients() {
+    register_post_type( 'clients',
+        array(
+            'labels' => array(
+                'name' => __( 'Clients' ),
+                'singular_name' => __( 'Client' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'clients'),
+            'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail' ),
+        )
+    );
+}
+
+add_action( 'init', 'create_key_points' );
+function create_key_points() {
+    register_post_type( 'key-points',
+        array(
+            'labels' => array(
+                'name' => __( 'Key Points' ),
+                'singular_name' => __( 'Key Point' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'key-points'),
+            'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail' ),
+        )
+    );
+}

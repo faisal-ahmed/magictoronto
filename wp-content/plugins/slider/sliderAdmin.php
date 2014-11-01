@@ -109,6 +109,10 @@ $uploaded_images = explode(";", get_option('uploaded_image'));
             complete: function (response) {
                 $("#message").html("<font color='green'>" + response.responseText + "</font>");
                 var successResult = response.responseText;
+                if (successResult.indexOf("Uploaded File : ") == -1){
+                    $("#message").html("<font color='red'> ERROR: Unable to upload files.</font>");
+                    return;
+                }
                 var file_name = successResult.substring(16);
                 var selectOption = "<option value=\"" + file_name + "\">" + file_name + "</option>";
                 $.post( "<?php echo "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>", { uploaded_image: file_name }, function( data ) {

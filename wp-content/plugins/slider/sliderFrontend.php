@@ -11,20 +11,6 @@ $slider_count = get_option('slider_count');
         <img src="<?php echo $resource_dir_name ?>/sliderimages/<?php echo get_option('slider_' . $i . '_image', "") ?>" alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
         <!-- LAYERS -->
 
-        <!-- LAYER NR. 1 -->
-        <div class="tp-caption skewfromrightshort customout"
-             data-x="center"
-             data-y="center"
-             data-customout="x:0;y:0;z:0;rotationX:0;rotationY:0;rotationZ:0;scaleX:0.75;scaleY:0.75;skewX:0;skewY:0;opacity:0;transformPerspective:600;transformOrigin:50% 50%;"
-             data-speed="500"
-             data-start="1200"
-             data-easing="Power4.easeOut"
-             data-endspeed="500"
-             data-endeasing="Power4.easeIn"
-             data-captionhidden="on"
-             style="z-index: 2"><img src="<?php echo get_template_directory_uri() ?>/sliderimages/logo.png" alt="">
-        </div>
-
         <!-- LAYER NR. 2 -->
         <?php if (($left_top = trim(get_option('slider_' . $i . '_text_left_top', ""))) != '') { ?>
         <div class="tp-caption medium_bg_darkblue skewfromleft customout"

@@ -13,7 +13,7 @@ Author URI: http://google.com/
  * Returns an stdClass object's array
  */
 
-function ffpc_get_social_links() {
+function ffpc_get_social_links_with_additional_info() {
 ?>
     <ul id="follow_us">
         <li><a href="<?php echo get_option( 'ffpc_social_facebook_url' ); ?>"><i class="icon-facebook"></i></a></li>
@@ -26,6 +26,21 @@ function ffpc_get_social_links() {
         <li>Questions? <a href="#"><?php echo get_option( 'ffpc_contact_email' ); ?></a></li>
     </ul>
     <div class="clear"></div>
+<?php
+}
+
+function ffpc_get_social_links_without_additional_info() {
+?>
+    <ul id="follow_us" style="float: right; margin: 5px 0;">
+        <li><a href="<?php echo get_option( 'ffpc_social_facebook_url' ); ?>"><i class="icon-facebook"></i></a></li>
+        <li><a href="<?php echo get_option( 'ffpc_social_twitter_url' ); ?>"><i class="icon-twitter"></i></a></li>
+        <li><a href="<?php echo get_option( 'ffpc_social_google_url' ); ?>"><i class="icon-google"></i></a></li>
+        <li><a href="<?php echo get_option( 'ffpc_social_youtube_url' ); ?>"><i class="icon-youtube-4"></i></a></li>
+    </ul>
+    <ul style="list-style: none;float: right; margin: 0;padding-right: 20px;">
+        <li><i class="icon-call" style="color: #F66; font-size: 22px;"></i> <strong class="phone"><?php echo get_option( 'ffpc_contact_phone' ); ?></strong></li>
+        <li class="headerEmail"><a href="#"><?php echo get_option( 'ffpc_contact_email' ); ?></a></li>
+    </ul>
 <?php
 }
 

@@ -55,13 +55,8 @@
             <div class="col-md-3 col-sm-3 col-xs-3">
                 <a href="index.html" id="logo">Learn</a>
             </div>
-            <div class="col-md-9 col-sm-9 col-xs-9">
-                <div class=" pull-right"><a href="login.html" class="button_top" id="login_top">Sign in</a> <a href="apply_2.html" class="button_top hidden-xs" id="apply">Apply now</a></div>
-                <ul id="top_nav" class="hidden-xs">
-                    <li><a href="about_us.html">About</a></li>
-                    <li><a href="apply.html">Wizard Apply</a></li>
-                    <li><a href="register.html">Register</a></li>
-                </ul>
+            <div class="col-md-9 col-sm-9 col-xs-9" style="padding-top: 20px;">
+                <?php ffpc_get_social_links_without_additional_info(); ?>
             </div>
         </div>
     </div>
@@ -108,6 +103,3 @@
         </div><!-- End row -->
     </div><!-- End container -->
 </nav>
-
-<!--			<h1 class="site-title"><a href="<?php /*echo esc_url( home_url( '/' ) ); */?>" title="<?php /*echo esc_attr( get_bloginfo( 'name', 'display' ) ); */?>" rel="home"><?php /*bloginfo( 'name' ); */?></a></h1>
-			<h2 class="site-description"><?php /*bloginfo( 'description' ); */?></h2>-->
