@@ -15,9 +15,9 @@
             <div class="col-md-8 col-md-offset-2">
                 <h3>Subscribe to our Newsletter for latest news.</h3>
                 <div id="message-newsletter"></div>
-                <form method="post" action="assets/newsletter.php" name="newsletter" id="newsletter" class="form-inline">
+                <form method="post" action="#" name="newsletter" class="form-inline">
                     <input name="email_newsletter" id="email_newsletter" type="email" value="" placeholder="Your Email" class="form-control">
-                    <button id="submit-newsletter" class=" button_outline"> Subscribe</button>
+                    <button class=" button_outline"> Subscribe</button>
                 </form>
             </div>
         </div>

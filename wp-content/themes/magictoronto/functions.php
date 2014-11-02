@@ -280,17 +280,46 @@ if ( ! function_exists( 'magictoronto_content_nav' ) ) :
  *
  * @since Magic Toronto 1.0
  */
-function magictoronto_content_nav( $html_id ) {
+function magictoronto_content_nav() {
 	global $wp_query;
 
-	$html_id = esc_attr( $html_id );
+    $wp_query->posts_per_page = 5;
 
 	if ( $wp_query->max_num_pages > 1 ) : ?>
-		<nav id="<?php echo $html_id; ?>" class="navigation" role="navigation">
-			<h3 class="assistive-text"><?php _e( 'Post navigation', 'magictoronto' ); ?></h3>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'magictoronto' ) ); ?></div>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'magictoronto' ) ); ?></div>
-		</nav><!-- #<?php echo $html_id; ?> .navigation -->
+        <section id="main_content" style="padding: 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="text-center">
+                            <ul class="pagination">
+                                <?php
+                                    $args = array(
+                                        'end_size'          => 2,
+                                        'mid_size'          => 2,
+                                        'prev_text'         => __('« Previous'),
+                                        'next_text'         => __('Next »'),
+                                        'type'              => 'array',
+                                        'add_fragment'      => "?s=" . get_search_query(),
+                                    );
+                                    $pagination = paginate_links( $args ) ;
+
+                                    $paged = ( get_query_var( 'paged' ) ) ? intval( get_query_var( 'paged' ) ) : 1;
+
+                                    foreach ($pagination as $key => $value) {
+                                        $add = ($paged == 1) ? 1 : 0;
+                                        $class = '';
+                                        if ( ($key + $add) == $paged) {
+                                            $class = 'active';
+                                        }
+                                        echo "<li class=\"{$class}\">$value</li>";
+                                    }
+                                ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 	<?php endif;
 }
 endif;
@@ -536,7 +565,7 @@ function create_testimonials() {
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'testimonials'),
-            'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail' ),
+            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail' ),
         )
     );
 }
@@ -552,7 +581,7 @@ function create_clients() {
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'clients'),
-            'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail' ),
+            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail' ),
         )
     );
 }
@@ -565,10 +594,54 @@ function create_key_points() {
                 'name' => __( 'Key Points' ),
                 'singular_name' => __( 'Key Point' )
             ),
+            'taxonomies' => array('category', 'post_tag'),
+            'hierarchical' => true,
+            'query_var' => true,
+            'show_ui' => true,
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'key-points'),
-            'supports' => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail' ),
+            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail', 'page-attributes', ),
+        )
+    );
+}
+
+add_action( 'init', 'create_products' );
+function create_products() {
+    register_post_type( 'products',
+        array(
+            'labels' => array(
+                'name' => __( 'Products' ),
+                'singular_name' => __( 'Product' )
+            ),
+            'taxonomies' => array('category', 'post_tag'),
+            'hierarchical' => true,
+            'query_var' => true,
+            'show_ui' => true,
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'products'),
+            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail' ),
+        )
+    );
+}
+
+add_action( 'init', 'create_videos' );
+function create_videos() {
+    register_post_type( 'videos',
+        array(
+            'labels' => array(
+                'name' => __( 'Videos' ),
+                'singular_name' => __( 'Video' )
+            ),
+            'taxonomies' => array('category'),
+            'hierarchical' => true,
+            'query_var' => true,
+            'show_ui' => true,
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'videos'),
+            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail' ),
         )
     );
 }

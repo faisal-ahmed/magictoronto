@@ -41,6 +41,9 @@ function ffpc_get_social_links_without_additional_info() {
         <li><i class="icon-call" style="color: #F66; font-size: 22px;"></i> <strong class="phone"><?php echo get_option( 'ffpc_contact_phone' ); ?></strong></li>
         <li class="headerEmail"><a href="#"><?php echo get_option( 'ffpc_contact_email' ); ?></a></li>
     </ul>
+    <ul style="list-style: none;float: right; margin: 0;padding-right: 20px;">
+        <li><img src="<?php echo get_template_directory_uri() ?>/img/social_bar.png"/></a></li>
+    </ul>
 <?php
 }
 
@@ -49,7 +52,6 @@ add_action('admin_menu', 'ffpc_plugin_menu');
 
 function ffpc_plugin_menu() {
 	add_options_page('FFPC Social Tool', 'FFPC Social Tool', 'manage_options', 'ffpc-social-id', 'ffpcSocial_options');
-	//add_submenu_page( 'admin.php?page=ffpc_settings', 'FFPC Social Tool', 'Social Tool', 'manage_options', 'ffpc-social-id', 'ffpcSocial_options');
 }
 
 function ffpcSocial_options() {

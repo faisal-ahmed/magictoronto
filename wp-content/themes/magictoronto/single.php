@@ -7,27 +7,14 @@
  * @since Magic Toronto 1.0
  */
 
-get_header(); ?>
+get_header();
 
-	<div id="primary" class="site-content">
-		<div id="content" role="main">
+get_template_part( 'content', get_post_type() );
 
-			<?php while ( have_posts() ) : the_post(); ?>
+if ( comments_open() || get_comments_number() ) {
+    comments_template();
+}
 
-				<?php get_template_part( 'content', get_post_format() ); ?>
+?>
 
-				<nav class="nav-single">
-					<h3 class="assistive-text"><?php _e( 'Post navigation', 'magictoronto' ); ?></h3>
-					<span class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'magictoronto' ) . '</span> %title' ); ?></span>
-					<span class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'magictoronto' ) . '</span>' ); ?></span>
-				</nav><!-- .nav-single -->
-
-				<?php comments_template( '', true ); ?>
-
-			<?php endwhile; // end of the loop. ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

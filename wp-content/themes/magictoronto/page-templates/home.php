@@ -4,7 +4,14 @@
  *
  */
 
-get_header(); ?>
+get_header();
+
+while ( have_posts() ) : the_post();
+    $the_header = the_title('', '', false);
+    $the_content = get_the_content();
+endwhile;
+
+?>
 
     <section class="tp-banner-container">
     <div class="tp-banner" >
@@ -16,20 +23,25 @@ get_header(); ?>
     <section id="main-features">
         <div class="divider_top_black"></div>
         <div class="container">
-            <?php while ( have_posts() ) : the_post(); ?>
             <div class="row">
                 <div class=" col-md-10 col-md-offset-1 text-center">
                     <p class="lead" style="margin-bottom: 0">
-                        <h2><?php the_title() ?></h2>
+                        <h2><?php echo $the_header ?></h2>
                     </p>
                 </div>
             </div>
             <div class="row" style="text-align: justify;">
                 <div class="col-md-12">
-                    <h3><?php the_content() ?></h3>
+                    <?php
+                    $videos = array();
+                    $args = array( 'post_type' => 'videos', 'numberposts' => -1,  'cat' => 8,  'post_status' => array('publish'), );
+                    $loop = new WP_Query( $args );
+                    while ( $loop->have_posts() ) : $loop->the_post();
+                        the_content();
+                    endwhile; ?>
+                    <h3><?php echo $the_content ?></h3>
                 </div>
             </div><!-- End row -->
-            <?php endwhile; // end of the loop. ?>
         </div><!-- End container-->
     </section><!-- End main-features -->
 
@@ -45,7 +57,7 @@ get_header(); ?>
 
         <div class="row">
             <?php
-            $args = array( 'post_type' => 'key-points', 'numberposts' => -1,  'post_status' => array('publish'), );
+            $args = array( 'post_type' => 'key-points', 'numberposts' => -1, 'cat' => 8, 'post_status' => array('publish'), );
             $loop = new WP_Query( $args );
             while ( $loop->have_posts() ) : $loop->the_post();
                 $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()));
@@ -63,14 +75,24 @@ get_header(); ?>
             endwhile;
             ?>
         </div><!-- End row -->
-        <hr>
 
     </div><!-- End container -->
     </section><!-- End main_content -->
 
+    <section id="sub-header" class="pattern_1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center">
+                    <div class="row">
+                        <div class="col-md-2 hidden-sm hidden-xs"><img src="<?php echo get_template_directory_uri() ?>/img/arrow_hand_1.png" alt="Arrow" > </div>
+                        <div class="col-md-8"><a href="#" class="button_big">Book A Show</a> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-    <section id="main_content_gray" style="padding: 0;">
+    <section id="main_content_gray">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

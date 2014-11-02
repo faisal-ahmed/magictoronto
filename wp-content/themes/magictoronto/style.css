@@ -19,3 +19,18 @@
 .headerEmail a:hover{
     color: #1dd7b2;
 }
+
+.sf-menu li{
+    text-align: center;
+    height: 68px;
+}
+
+.page4ColumnImage{
+    width: 400px;
+    height: 300px;
+}
+
+.photo .products{
+    width: 253px;
+    height: 253px;
+}

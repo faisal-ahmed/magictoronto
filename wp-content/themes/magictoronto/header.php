@@ -53,7 +53,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-3">
-                <a href="index.html" id="logo">Learn</a>
+                <a href="<?php echo esc_url( home_url( '/' ) ) ?>" id="logo">Magic In Toronto</a>
             </div>
             <div class="col-md-9 col-sm-9 col-xs-9" style="padding-top: 20px;">
                 <?php ffpc_get_social_links_without_additional_info(); ?>
@@ -91,8 +91,8 @@
 
                 <div class="col-md-4 pull-right hidden-sm hidden-xs">
                     <div id="sb-search" class="sb-search">
-                        <form>
-                            <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search">
+                        <form action="<?php echo esc_url( home_url( '/' ) ) ?>" method="get">
+                            <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="s" id="search">
                             <input class="sb-search-submit" type="submit" value="">
                             <span class="sb-icon-search"></span>
                         </form>
