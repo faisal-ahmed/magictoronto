@@ -16,9 +16,12 @@ get_header();
 
 while ( have_posts() ) : the_post();
     $content = get_the_content();
+    $category = get_the_category();
 endwhile;
 
-$args = array( 'post_type' => 'videos', 'numberposts' => -1, 'cat' => 7, 'post_status' => array('publish'), );
+$category_id = $category[0]->term_id;
+
+$args = array( 'post_type' => 'videos', 'numberposts' => -1, 'cat' => $category_id, 'order' => 'ASC', 'post_status' => array('publish'), );
 $loop = new WP_Query( $args );
 while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <section id="sub-header">
@@ -39,7 +42,7 @@ endwhile;
 <section id="sub-header" class="pattern_1" >
     <div class="container">
         <?php
-        $args = array( 'post_type' => 'key-points', 'numberposts' => -1, 'cat' => 7, 'post_status' => array('publish'), );
+        $args = array( 'post_type' => 'key-points', 'numberposts' => -1, 'cat' => $category_id, 'order' => 'ASC', 'post_status' => array('publish'), );
         $loop = new WP_Query( $args );
         while ( $loop->have_posts() ) : $loop->the_post();
             $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
@@ -67,7 +70,7 @@ endwhile;
             </div><!-- End row -->
 
             <?php
-            $args = array( 'post_type' => 'products', 'numberposts' => -1, 'cat' => 7, 'post_status' => array('publish'), );
+            $args = array( 'post_type' => 'products', 'numberposts' => -1, 'cat' => $category_id, 'order' => 'ASC', 'post_status' => array('publish'), );
             $loop = new WP_Query( $args );
             $count = 0;
             while ( $loop->have_posts() ) : $loop->the_post();

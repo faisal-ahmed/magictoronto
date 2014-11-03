@@ -12,9 +12,12 @@ get_header();
 while ( have_posts() ) : the_post();
     $content = get_the_content();
     $tag_ids = wp_get_post_tags( $post->ID, array( 'fields' => 'ids' ) );
+    $category = get_the_category();
 endwhile;
 
-$args = array( 'post_type' => 'videos', 'numberposts' => -1, 'cat' => 7, 'post_status' => array('publish'), );
+$category_id = $category[0]->term_id;
+
+$args = array( 'post_type' => 'videos', 'numberposts' => -1, 'cat' => $category_id, 'order' => 'ASC', 'post_status' => array('publish'), );
 $loop = new WP_Query( $args );
 while ( $loop->have_posts() ) : $loop->the_post(); ?>
     <section id="sub-header">
@@ -58,12 +61,12 @@ endwhile;
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2>Kid's Shows</h2>
+                    <h2>Related Shows</h2>
                 </div>
             </div><!-- End row -->
 
             <?php
-            $args = array( 'post_type' => 'products', 'numberposts' => -1, 'cat' => 7, 'post_status' => array('publish'), );
+            $args = array( 'post_type' => 'products', 'numberposts' => -1, 'cat' => $category_id, 'order' => 'ASC', 'post_status' => array('publish'), );
             $loop = new WP_Query( $args );
             $count = 0;
             while ( $loop->have_posts() ) : $loop->the_post();

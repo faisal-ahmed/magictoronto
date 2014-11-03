@@ -71,7 +71,7 @@
                 <?php
                     $menu = 'main-menu';
                     $items = wp_get_nav_menu_items( $menu );
-                    $navMenu = "<ul class=\"sf-menu\">";
+                    $navMenu = "<ul class=\"sf-menu\" style=\"margin-left: -70px\">";
                     foreach ($items as $key => $item) {
                         if (is_object($item) && $item->menu_item_parent == 0){
                             $navMenu .= '<li><a href="' . $item->url . '">' . $item->title . '</a>';
@@ -89,7 +89,7 @@
                     echo $navMenu;
                 ?>
 
-                <div class="col-md-4 pull-right hidden-sm hidden-xs">
+                <div class="col-md-4 pull-right hidden-sm hidden-xs" style="margin-right: -80px">
                     <div id="sb-search" class="sb-search">
                         <form action="<?php echo esc_url( home_url( '/' ) ) ?>" method="get">
                             <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="s" id="search">

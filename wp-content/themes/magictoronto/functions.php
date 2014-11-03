@@ -562,10 +562,14 @@ function create_testimonials() {
                 'name' => __( 'Testimonials' ),
                 'singular_name' => __( 'Testimonial' )
             ),
+            'taxonomies' => array('category', 'post_tag'),
+            'hierarchical' => true,
+            'query_var' => true,
+            'show_ui' => true,
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'testimonials'),
-            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail' ),
+            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail', 'page-attributes', ),
         )
     );
 }
@@ -578,10 +582,14 @@ function create_clients() {
                 'name' => __( 'Clients' ),
                 'singular_name' => __( 'Client' )
             ),
+            'taxonomies' => array('category', 'post_tag'),
+            'hierarchical' => true,
+            'query_var' => true,
+            'show_ui' => true,
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'clients'),
-            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail' ),
+            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail', 'page-attributes', ),
         )
     );
 }
@@ -621,7 +629,7 @@ function create_products() {
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'products'),
-            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail' ),
+            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail', 'page-attributes', ),
         )
     );
 }
@@ -634,14 +642,23 @@ function create_videos() {
                 'name' => __( 'Videos' ),
                 'singular_name' => __( 'Video' )
             ),
-            'taxonomies' => array('category'),
+            'taxonomies' => array('category', 'post_tag'),
             'hierarchical' => true,
             'query_var' => true,
             'show_ui' => true,
             'public' => true,
             'has_archive' => true,
             'rewrite' => array('slug' => 'videos'),
-            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail' ),
+            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail', 'page-attributes', ),
         )
     );
 }
+
+function myplugin_settings() {
+// Add tag metabox to page
+    register_taxonomy_for_object_type('post_tag', 'page');
+// Add category metabox to page
+    register_taxonomy_for_object_type('category', 'page');
+}
+// Add to the admin_init hook of your theme functions.php file
+add_action( 'admin_init', 'myplugin_settings' );
