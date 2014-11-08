@@ -8,7 +8,7 @@ $slider_count = get_option('slider_count');
 <li data-transition="<?php echo $animation_options[rand(0, 3)] ?>" data-slotamount="4" data-masterspeed="1500" >
     <a href="<?php $slider_link = get_option('slider_' . $i . '_link', ""); echo ($slider_link == '') ? "#" : $slider_link; ?>">
         <!-- MAIN IMAGE -->
-        <img src="<?php echo $resource_dir_name ?>/sliderimages/<?php echo get_option('slider_' . $i . '_image', "") ?>" alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+        <img src="<?php echo $resource_dir_name ?>/sliderImages/<?php echo get_option('slider_' . $i . '_image', "") ?>" alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
         <!-- LAYERS -->
 
         <!-- LAYER NR. 2 -->

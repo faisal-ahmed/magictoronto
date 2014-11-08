@@ -9,10 +9,11 @@ Author Email: faisal.ahmed0001@gmail.com
 
 global $resource_dir_name;
 $dir_name = str_replace('\\', '/', dirname(__FILE__));
+$beta = (strpos($_SERVER['REQUEST_URI'], 'beta') !== -1) ? "/beta" : "";
 if ($_SERVER['HTTP_HOST'] == 'localhost') {
-    $resource_dir_name = "http://" . $_SERVER['HTTP_HOST'] . '/magictoronto/wp-content/plugins/slider/';
+    $resource_dir_name = "http://" . $_SERVER['HTTP_HOST'] . '/magictoronto/wp-content/plugins/slider';
 } else {
-    $resource_dir_name = "http://" . $_SERVER['HTTP_HOST'] . '/wp-content/plugins/slider/';
+    $resource_dir_name = "http://" . $_SERVER['HTTP_HOST'] . $beta . '/wp-content/plugins/slider';
 }
 
 /********** Admin Panel **************************/
