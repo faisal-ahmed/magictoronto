@@ -654,6 +654,26 @@ function create_videos() {
     );
 }
 
+add_action( 'init', 'create_faq' );
+function create_faq() {
+    register_post_type( 'faqs',
+        array(
+            'labels' => array(
+                'name' => __( 'Faqs' ),
+                'singular_name' => __( 'Faq' )
+            ),
+            'taxonomies' => array('category', 'post_tag'),
+            'hierarchical' => true,
+            'query_var' => true,
+            'show_ui' => true,
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'faqs'),
+            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail', 'page-attributes', ),
+        )
+    );
+}
+
 function myplugin_settings() {
 // Add tag metabox to page
     register_taxonomy_for_object_type('post_tag', 'page');

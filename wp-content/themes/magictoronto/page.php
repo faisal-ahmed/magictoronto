@@ -65,7 +65,7 @@ endwhile;
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <h2>Kid's Shows</h2>
+                    <h2>Magic Shows</h2>
                 </div>
             </div><!-- End row -->
 

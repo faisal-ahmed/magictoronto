@@ -89,15 +89,15 @@
                     echo $navMenu;
                 ?>
 
-                <div class="col-md-4 pull-right hidden-sm hidden-xs" style="margin-right: -80px">
+                <!--<div class="col-md-4 pull-right hidden-sm hidden-xs" style="margin-right: -80px">
                     <div id="sb-search" class="sb-search">
-                        <form action="<?php echo esc_url( home_url( '/' ) ) ?>" method="get">
+                        <form action="<?php /*echo esc_url( home_url( '/' ) ) */?>" method="get">
                             <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="s" id="search">
                             <input class="sb-search-submit" type="submit" value="">
                             <span class="sb-icon-search"></span>
                         </form>
                     </div>
-                </div><!-- End search -->
+                </div>--><!-- End search -->
 
             </div>
         </div><!-- End row -->
