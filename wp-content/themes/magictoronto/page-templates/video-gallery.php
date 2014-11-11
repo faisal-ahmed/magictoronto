@@ -30,6 +30,6 @@ endwhile;
             </div>
             <?php endwhile; ?><div class="col-md-12"><h3></h3><div class="col-md-3"></div><div class="col-md-9"></div><hr/></div>
         </div>
-    </section><div class="col-md-12"><hr/><h3></h3><div class="col-md-2"></div><div class="col-md-10"></div></div>
+    </section>
 
 <?php get_footer(); ?>
