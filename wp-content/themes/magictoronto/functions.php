@@ -674,6 +674,26 @@ function create_faq() {
     );
 }
 
+add_action( 'init', 'create_video_gallery' );
+function create_video_gallery() {
+    register_post_type( 'video-galleries',
+        array(
+            'labels' => array(
+                'name' => __( 'Video Galleries' ),
+                'singular_name' => __( 'Video Gallery' )
+            ),
+            'taxonomies' => array('category', 'post_tag'),
+            'hierarchical' => true,
+            'query_var' => true,
+            'show_ui' => true,
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'video-galleries'),
+            'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail', 'page-attributes', ),
+        )
+    );
+}
+
 function myplugin_settings() {
 // Add tag metabox to page
     register_taxonomy_for_object_type('post_tag', 'page');

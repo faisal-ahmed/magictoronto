@@ -27,7 +27,8 @@ endwhile;
     <section id="sub-header">
         <div class="container">
             <h3 style="text-align: center;"><?php echo $the_header; ?></h3>
-            <div style="text-align: justify"><strong><?php echo $the_content; ?></strong></div>
+            <hr/>
+            <div style="text-align: justify"><strong><p><?php echo $the_content; ?></p></strong></div>
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel-group" id="accordion">

@@ -27,8 +27,8 @@
 
     <div class="container" id="nav-footer">
         <div class="row text-left">
-            <div class="col-md-3 col-sm-3">
-                <h4>Browse</h4>
+            <div class="col-md-4 col-sm-4">
+                <h4>IMPORTANT LINKS</h4>
                 <?php
                     $menu = 'footer-menu-1';
                     $items = wp_get_nav_menu_items( $menu );
@@ -40,8 +40,8 @@
                     echo $navMenu;
                 ?>
             </div><!-- End col-md-4 -->
-            <div class="col-md-3 col-sm-3">
-                <h4>Next Courses</h4>
+            <div class="col-md-4 col-sm-4">
+                <h4>MORE INFORMATION</h4>
                 <?php
                     $menu = 'footer-menu-2';
                     $items = wp_get_nav_menu_items( $menu );
@@ -53,10 +53,10 @@
                     echo $navMenu;
                 ?>
             </div><!-- End col-md-4 -->
-            <div class="col-md-3 col-sm-3">
+            <!--<div class="col-md-3 col-sm-3">
                 <h4>About Learn</h4>
                 <?php
-                    $menu = 'footer-menu-3';
+/*                    $menu = 'footer-menu-3';
                     $items = wp_get_nav_menu_items( $menu );
                     $navMenu = "<ul>";
                     foreach ($items as $key => $item) {
@@ -64,9 +64,9 @@
                     }
                     $navMenu .= "</ul>";
                     echo $navMenu;
-                ?>
-            </div><!-- End col-md-4 -->
-            <div class="col-md-3 col-sm-3">
+                */?>
+            </div>--><!-- End col-md-4 -->
+            <div class="col-md-4 col-sm-4">
                 <?php ffpc_get_social_links_with_additional_info(); ?>
             </div><!-- End col-md-4 -->
         </div><!-- End row -->
